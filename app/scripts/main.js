@@ -1,46 +1,55 @@
 var Player = function (options) {
   this.name = options.name;
-  this.health = options.health;
-  this.attack = function(warrier){
-    warrier.health = options.health -10;
+  this.health = options.health || 100;
   };
 
-};
 
 var Enemy = function (options) {
   this.name = options.name;
-  this.health = options.health;
-  this.attack = function(player){
-    player.health = options.health -10;
-  };
+  this.health = options.health || 100;
 };
+
+//attack prototypes
+
+Player.prototype.attack = function(warrier){
+  warrier.health = warrier.health - (_.random(0,20));
+};
+
+Enemy.prototype.attack = function(player){
+  player.health = player.health - (_.random(0,20));
+};
+
+/////
 
 var mario = new Player({
   name: 'Mario',
-  health: 100,
 });
 
 var luigi = new Player({
   name: 'Luigi',
-  health: 100
+
 });
 
 var peach = new Player({
   name: 'Peach',
-  health: 100
+
 });
 
 var bowser = new Enemy({
   name: 'Bowser',
-  health: 100
+
 });
 
 var wario = new Enemy({
   name: 'Wario',
-  health: 100
+
 });
 
 var waluigi = new Enemy({
   name: 'Waluigi',
-  health: 100
+
+});
+
+$('.mariopic').click(function(){
+  $().removeClass('.mariopic').addClass('.fighter');
 });
