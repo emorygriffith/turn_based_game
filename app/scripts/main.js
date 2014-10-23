@@ -1,13 +1,15 @@
 //constructors
 var Player = function (options) {
+  options = options || {};
   this.name = options.name;
   this.health = 100;
-  this.attack = function(warrior){
-    warrior.health = warrior.health - (_.random(0,20));
+  this.attack = function(enemy){
+    enemy.health = enemy.health - (_.random(0,20));
     };
   };
 
 var Enemy = function (options) {
+  options = options || {};
   this.name = options.name;
   this.health = 100;
   this.attack = function(player){
@@ -20,7 +22,7 @@ var player;
 var enemy= new Enemy({name: 'Bowser', health: 100});
 
 
-
+//'screen 1'
 $('.start').on('click', function(){
   event.preventDefault();
 
@@ -29,7 +31,7 @@ $('.start').on('click', function(){
 });
 
 
-
+//'screen 2'
 $('.choose button').on('click', function(){
   event.preventDefault();
 
@@ -37,14 +39,27 @@ $('.choose button').on('click', function(){
   $('.fight').show();
 
   var player_name= $(this).text();
-      player = new Player({
-      name: player_name,
 
+  player = new Player({
+      name: player_name,
 
   });
 
+  $('.playername').prepend(player_name);
+  $('.playerhealth').html(player.health);
 
 
-  $('.playername').html(player_name);
 
 });
+
+// attack button
+$('.attack').on('click', function(){
+  player.attack(enemy);
+  enemy.attack(player);
+  $('.enemyhealth').html(enemy.health);
+  $('.playerhealth').html(player.health);
+
+})
+
+
+$('.enemyhealth').html(enemy.health);
