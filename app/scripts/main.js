@@ -1,55 +1,50 @@
+//constructors
 var Player = function (options) {
   this.name = options.name;
-  this.health = options.health || 100;
+  this.health = 100;
+  this.attack = function(warrior){
+    warrior.health = warrior.health - (_.random(0,20));
+    };
   };
-
 
 var Enemy = function (options) {
   this.name = options.name;
-  this.health = options.health || 100;
+  this.health = 100;
+  this.attack = function(player){
+    player.health = player.health - (_.random(0,20));
+  };
 };
 
-//attack prototypes
+// instances
+var player;
+var enemy= new Enemy({name: 'Bowser', health: 100});
 
-Player.prototype.attack = function(warrier){
-  warrier.health = warrier.health - (_.random(0,20));
-};
 
-Enemy.prototype.attack = function(player){
-  player.health = player.health - (_.random(0,20));
-};
 
-/////
+$('.start').on('click', function(){
+  event.preventDefault();
 
-var mario = new Player({
-  name: 'Mario',
+  $('.choose').show();
+  $('.welcome').hide();
 });
 
-var luigi = new Player({
-  name: 'Luigi',
 
-});
 
-var peach = new Player({
-  name: 'Peach',
+$('.choose button').on('click', function(){
+  event.preventDefault();
 
-});
+  $('.choose').hide();
+  $('.fight').show();
 
-var bowser = new Enemy({
-  name: 'Bowser',
+  var player_name= $(this).text();
+      player = new Player({
+      name: player_name,
 
-});
 
-var wario = new Enemy({
-  name: 'Wario',
+  });
 
-});
 
-var waluigi = new Enemy({
-  name: 'Waluigi',
 
-});
+  $('.playername').html(player_name);
 
-$('.mariopic').click(function(){
-  $().removeClass('.mariopic').addClass('.fighter');
 });

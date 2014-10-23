@@ -27,19 +27,40 @@
       Emory's Awesome Game!
     </header>
 
-    <div class="hero-unit">
+<div class="page">
 
-        <img class="mariopic" src="http://img4.wikia.nocookie.net/__cb20120816162009/mario/images/1/15/MarioNSMB2.png"/>
-        <img class="luigipic" src="http://www.mariowiki.com/images/5/58/NsmbLuigi.png"/>
-        <img class="peachpic" src="http://www.mariowiki.com/images/thumb/3/38/NSMBWiiPeach.png/240px-NSMBWiiPeach.png"/>
-
-
-
-        <img class="fighter2 bowserpic" src="http://i252.photobucket.com/albums/hh28/HardcoreTM/TF2/Sprays/smashBowser.png~original"/>
-        <img class="fighter2 waluigipic" src="http://img1.wikia.nocookie.net/__cb20141012011316/lapis/images/4/46/Waluigi.png"/>
-        <img class="fighter2 wariopic" src="http://www.mariopartylegacy.com/forum/extra/arcticactivities/transparentart/wario.png"/>
-
+    <div class="welcome">
+      <p>Welcome to Emory's Game!</p>
+      <button class="start">Let's Get Started!</button>
     </div>
+
+    <div class="choose">
+      <p>Choose a player!</p>
+      <button class="1">Mario</button>
+      <button class="2">Luigi</button>
+      <button class="3">Princess Peach</button>
+    </div>
+
+    <div class="fight">
+      <p class = "playername">Player Name <span class="health"></span></p>
+      <p>is fighting</p>
+      <p class "enemyname">Bowser <span class="health"></span></p>
+    </div>
+
+
+<!-- Scripts  -->
+
+    <script type = "text/template">
+      <p><%=name%> <%=health%></p>
+        <p>is fighting</p>
+      <p>Bowser <%=health%></p>
+    </script>
+
+</div>
+
+
+
+
 
 
 

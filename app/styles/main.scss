@@ -16,58 +16,19 @@ header{
   display: block;
 }
 
-.hero-unit {
-  margin: 0 auto;
-  margin-top:35px;
-  background-image: URL('http://www.mariomayhem.com/fun/smb_level_editor/images/overworld_bg.png');
-  height: 385px;
-  width: 943px;
-
-/*   img{
-  transition: .8s ease;
+.welcome{
+  margin:0 auto;
+  text-align: center;
 }
 
-img:hover{
-  height:6.0em;
-  width:6.0em;
-  transition: .8s ease;
+.choose{
+  display:none;
+  margin: 0 auto;
+  text-align: center;
+}
 
-} */
-      .mariopic{
-        height:2.95em;
-        width:2.95em;
-        float:left;
-      }
-      .luigipic{
-        height:2.95em;
-        width:2.95em;
-        float:left;
-      }
-      .peachpic{
-        height:2.95em;
-        width:2.95em;
-        float:left;
-      }
-
-      .wariopic{
-        height:2.95em;
-        width:2.95em;
-        float:right;
-      }
-      .waluigipic{
-        height:2.95em;
-        width:2.95em;
-        float:right;
-      }
-      .bowserpic{
-        height:2.95em;
-        width:2.95em;
-        float:right;
-      }
-
-
-    .fighter{
-      height:500px;
-      width:500px;
-    }
+.fight{
+  display:none;
+  margin: 0 auto;
+  text-align: center;
 }
