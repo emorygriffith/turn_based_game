@@ -1,3 +1,3 @@
-## Yo, I'm a Readme
+## Turn based game
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+I created a turn-based game with javascript for The Iron Yard assignment.  
