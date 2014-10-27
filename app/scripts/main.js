@@ -9,13 +9,6 @@ var Player = function (options) {
   this.name = options.name;
   this.health = 100;
 
-  if (name='mario') {
-    attack_points=15
-  } else if (name='luigi') {
-    attack_points=16
-  } else if (name='princess peach') {
-    attack_points=20
-  };
 
   this.attack = function(enemy){
     enemy.health = enemy.health - attack_points;
@@ -69,7 +62,29 @@ $('.choose button').on('click', function(){
 
   $('.playerhealth').html(player.health);
 
+  switch (player.name){
+  case "Mario":
+    $('.playerpic').append(mario);
+    break;
+      case "Luigi":
+        $('.playerpic').append(luigi);
+        break;
+        case "Princess Peach":
+        $('.playerpic').append(peach);
 
+};
+
+  switch (player.name){
+  case "Mario":
+    attack_points= 10;
+    break;
+      case "Luigi":
+        attack_points= 15;
+        break;
+        case "Princess Peach":
+        attack_points=20;
+
+  };
 
 
 });

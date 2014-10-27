@@ -22,6 +22,43 @@ header{
   background-image: URL('http://www.mariomayhem.com/fun/smb_level_editor/images/overworld_bg.png');
   height: 386px;
   width:900px;
+
+button{
+  clear:both;
+  float:left;
+  margin-left:375px;
+  width:150px;
+  color: white;
+  background-color: HSLA(20, 86%, 43%, 1);
+  border:2px solid;
+  border-color:HSLA(221, 42%, 20%, 1);
+}
+
+  .players{
+    clear:both;
+    margin-left: 86px;
+    margin-top: 87px;
+  }
+
+  .mario{
+    float:left;
+    margin-left: 100px;
+  }
+  .luigi{
+    float:left;
+    margin-left: 100px;
+  }
+  .peach{
+    float:left;
+    margin-left: 100px;
+  }
+
+  img{
+    height: 150px;
+    float:left;
+  }
+
+
 }
 
 .choose{
@@ -75,4 +112,25 @@ header{
   background-image: URL('http://www.mariomayhem.com/fun/smb_level_editor/images/overworld_bg.png');
   height: 386px;
   width:900px;
+
+  .fightcontainer{
+    margin-right:177px;
+    display:block;
+    padding-top: 22px;
+
+  }
+}
+
+
+
+.playerpic{
+  float:left;
+}
+
+.enemypic{
+  img{
+  float:right;
+  height:200px;
+  width:200px;
+}
 }
