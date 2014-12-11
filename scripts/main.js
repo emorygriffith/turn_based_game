@@ -12,12 +12,10 @@ var Player = function (options) {
   this.attack = function(enemy){
     enemy.health = enemy.health - attack_points;
     };
-
 };
 
 
 var Enemy = function (options) {
-
   options = options || {};
   this.name = options.name;
   this.health = 100;
@@ -44,22 +42,23 @@ $('.start').on('click', function(){
 //'screen 2'
 $('.choose button').on('click', function(){
   event.preventDefault();
-
   $('.choose').hide();
   $('.fight').show();
-
 
   var player_name= $(this).text();
 
   player = new Player({
       name: player_name,
 
-
   });
+
+
 
   $('.playername').prepend(player_name);
 
   $('.playerhealth').html(player.health);
+
+  $('.enemyhealth').html(enemy.health);
 
   switch (player.name){
   case "Mario":
@@ -70,36 +69,32 @@ $('.choose button').on('click', function(){
         break;
         case "Princess Peach":
         $('.playerpic').append(peach);
+  };
 
-};
-
-
-
+  switch (player.name){
+    case "Mario":
+      attack_points= 10;
+      break;
+      case "Luigi":
+        attack_points= 15;
+        break;
+        case "Princess Peach":
+          attack_points=20;
+        };
 });
 
 
 // attack button
 $('.attack').on('click', function(){
-  player.attack(enemy);
 
+  //player attack enemy
   enemy.attack(player);
-
-
-  $('.enemyhealth').html(enemy.health);
   $('.playerhealth').html(player.health);
 
-  switch (player.name){
-  case "Mario":
-    attack_points= 10;
-    break;
-      case "Luigi":
-        attack_points= 15;
-        break;
-        case "Princess Peach":
-        attack_points=20;
-  };
+  //enemy attack player
+  player.attack(enemy);
+
+  $('.enemyhealth').html(enemy.health);
+
 
 });
-
-
-$('.enemyhealth').html(enemy.health);
